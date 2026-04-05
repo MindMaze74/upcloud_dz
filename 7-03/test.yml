@@ -7,7 +7,7 @@
   become: yes
 
   pre_tasks:
-    - name: Validating the ssh port is open and
+    - name: Validating the ssh port is open
       wait_for:
         host: "{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}"
         port: 22
@@ -22,7 +22,7 @@
         dest: /tmp/test
         content: "success"
 
-- name: update apt
+    - name: update apt cache
       apt:
         update_cache: yes
 
@@ -35,3 +35,4 @@
       service:
         name: nginx
         state: started
+        enabled: yes

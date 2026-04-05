@@ -26,7 +26,7 @@
 
 
 Провести тестирование и приложить скриншоты развернутых в облаке ВМ, успешно отработавшего ansible playbook. 
-
+![Скриншот-1](https://github.com/netology-code/sys-pattern-homework/blob/main/img/img15.png)
 ---
 
 ## Дополнительные задания* (со звёздочкой)

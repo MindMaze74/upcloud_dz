@@ -63,6 +63,7 @@ resource "yandex_compute_instance" "web_a" {
   metadata = {
     user-data          = file("./cloud-init.yml")
     serial-port-enable = 1
+    ssh-keys           = "user:${file("~/.ssh/id_ed25519.pub")}"
   }
 
   scheduling_policy { preemptible = true }
@@ -97,6 +98,7 @@ resource "yandex_compute_instance" "web_b" {
   metadata = {
     user-data          = file("./cloud-init.yml")
     serial-port-enable = 1
+    ssh-keys           = "user:${file("~/.ssh/id_ed25519.pub")}"
   }
 
   scheduling_policy { preemptible = true }
@@ -131,6 +133,7 @@ resource "yandex_compute_instance" "wrong_b" {
   metadata = {
     user-data          = file("./cloud-init.yml")
     serial-port-enable = 1
+    ssh-keys           = "user:${file("~/.ssh/id_ed25519.pub")}"
   }
 
   scheduling_policy { preemptible = true }
